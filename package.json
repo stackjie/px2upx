@@ -1,7 +1,7 @@
 {
   "name": "px2rpx",
   "description": "According to one stylesheet, generate rpx version and @1x, @2x and @3x stylesheet",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "homepage": "https://github.com/aOrz/px2rpx",
   "author": "aorz <rememberwz@gmail.com>",
   "repository": {
