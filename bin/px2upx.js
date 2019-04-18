@@ -2,7 +2,7 @@
 
 var program = require('commander');
 var pkg = require('../package.json');
-var Px2rpx = require('../index');
+var Px2upx = require('../index');
 var chalk = require('chalk');
 var path = require('path');
 var fs = require('fs-extra');
@@ -33,11 +33,11 @@ function saveFile(filePath, content) {
 
 
 program.version(pkg.version)
-  .option('-u, --rpxUnit [value]', 'set `rpx` unit value (default: 75)', 75)
+  .option('-u, --upxUnit [value]', 'set `upx` unit value (default: 75)', 75)
   .option('-x, --threeVersion [value]', 'whether to generate @1x, @2x and @3x version stylesheet (default: false)', false)
-  .option('-r, --rpxVersion [value]', 'whether to generate rpx version stylesheet (default: true)', true)
+  .option('-r, --upxVersion [value]', 'whether to generate upx version stylesheet (default: true)', true)
   .option('-b, --baseDpr [value]', 'set base device pixel ratio (default: 2)', 2)
-  .option('-p, --rpxPrecision [value]', 'set rpx value precision (default: 6)', 6)
+  .option('-p, --upxPrecision [value]', 'set upx value precision (default: 6)', 6)
   .option('-o, --output [path]', 'the output file dirname')
   .parse(process.argv);
 
@@ -47,14 +47,14 @@ if (!program.args.length) {
 }
 
 var config = {
-  rpxUnit: deserializeValue(program.rpxUnit),
+  upxUnit: deserializeValue(program.upxUnit),
   threeVersion: deserializeValue(program.threeVersion),
-  rpxVersion: deserializeValue(program.rpxVersion),
+  upxVersion: deserializeValue(program.upxVersion),
   baseDpr: deserializeValue(program.baseDpr),
-  rpxPrecision: deserializeValue(program.rpxPrecision)
+  upxPrecision: deserializeValue(program.upxPrecision)
 };
 
-var px2rpxIns = new Px2rpx(config);
+var px2upxIns = new Px2upx(config);
 
 program.args.forEach(function (filePath) {
 
@@ -69,16 +69,16 @@ program.args.forEach(function (filePath) {
   // generate @1x, @2x and @3x version stylesheet
   if (config.threeVersion) {
     for (var dpr = 1; dpr <= 3; dpr++) {
-      var newCssText = px2rpxIns.generateThree(cssText, dpr);
+      var newCssText = px2upxIns.generateThree(cssText, dpr);
       var newFileName = fileName.replace(/(.debug)?.css/, dpr + 'x.debug.css');
       var newFilepath = path.join(outputPath, newFileName);
       saveFile(newFilepath, newCssText);
     }
   }
 
-  // generate rpx version stylesheet
-  if (config.rpxVersion) {
-    var newCssText = px2rpxIns.generaterpx(cssText);
+  // generate upx version stylesheet
+  if (config.upxVersion) {
+    var newCssText = px2upxIns.generateupx(cssText);
     var newFileName = fileName.replace(/(.debug)?.css/, '.debug.css');
     var newFilepath = path.join(outputPath, newFileName);
     saveFile(newFilepath, newCssText);

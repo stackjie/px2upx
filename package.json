@@ -1,12 +1,12 @@
 {
-  "name": "px2rpx",
-  "description": "According to one stylesheet, generate rpx version and @1x, @2x and @3x stylesheet",
-  "version": "0.5.3",
-  "homepage": "https://github.com/aOrz/px2rpx",
-  "author": "aorz <rememberwz@gmail.com>",
+  "name": "px2upx",
+  "description": "According to one stylesheet, generate upx version and @1x, @2x and @3x stylesheet",
+  "version": "0.0.1",
+  "homepage": "https://github.com/stackjie/px2upx",
+  "author": "stackjie <stackjie@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:aorz/px2rpx.git"
+    "url": "git@github.com:aorz/px2upx.git"
   },
   "dependencies": {
     "css": "~2.2.0",
@@ -21,7 +21,7 @@
     "mocha": "^2.1.0"
   },
   "bin": {
-    "px2rpx": "./bin/px2rpx.js"
+    "px2upx": "./bin/px2upx.js"
   },
   "scripts": {
     "test": "mocha",
@@ -30,8 +30,8 @@
   "main": "index.js",
   "keywords": [
     "3x",
-    "rpx",
-    "px2rpx"
+    "upx",
+    "px2upx"
   ],
   "license": "MIT"
 }

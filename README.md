@@ -1,19 +1,19 @@
-# px2rpx
+# px2upx
 
-According to one stylesheet, generate rpx version and @1x, @2x and @3x stylesheet.
+According to one stylesheet, generate upx version and @1x, @2x and @3x stylesheet.
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[npm-image]: https://img.shields.io/npm/v/px2rpx.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/px2rpx
-[downloads-image]: http://img.shields.io/npm/dm/px2rpx.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/px2rpx
+[npm-image]: https://img.shields.io/npm/v/px2upx.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/px2upx
+[downloads-image]: http://img.shields.io/npm/dm/px2upx.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/px2upx
 
 This set of tools contains:
 
 * a CLI tool
-* [webpack loader](https://www.npmjs.com/package/px2rpx-loader)
+* [webpack loader](https://www.npmjs.com/package/px2upx-loader)
 
 ## Usage
 
@@ -27,36 +27,36 @@ The raw stylesheet only contains @2x style, and if you
 ### CLI tool
 
 ```
-$ npm install -g px2rpx
+$ npm install -g px2upx
 ```
 ```
-$ px2rpx -o build src/*.wxss
+$ px2upx -o build src/*.wxss
 ```
 
 ```
-  Usage: px2rpx [options] <file...>
+  Usage: px2upx [options] <file...>
 
   Options:
 
     -h, --help                      output usage information
     -V, --version                   output the version number
-    -u, --rpxUnit [value]           set `rpx` unit value (default: 75)
+    -u, --upxUnit [value]           set `upx` unit value (default: 75)
     -x, --threeVersion [value]      whether to generate @1x, @2x and @3x version stylesheet (default: false)
-    -r, --rpxVersion [value]        whether to generate rpx version stylesheet (default: true)
+    -r, --upxVersion [value]        whether to generate upx version stylesheet (default: true)
     -b, --baseDpr [value]           set base device pixel ratio (default: 2)
-    -p, --rpxPrecision [value]      set rpx value precision (default: 6)
+    -p, --upxPrecision [value]      set upx value precision (default: 6)
     -o, --output [path]             the output file dirname
 ```
 
 ### API
 
 ```
-var Px2rpx = require('px2rpx');
-var px2rpxIns = new Px2rpx([config]);
+var Px2upx = require('px2upx');
+var px2upxIns = new Px2upx([config]);
 var originCssText = '...';
 var dpr = 2;
-var newCssText = px2rpxIns.generaterpx(originCssText); // generate rpx version stylesheet
-var newCssText = px2rpxIns.generateThree(originCssText, dpr); // generate @1x, @2x and @3x version stylesheet
+var newCssText = px2upxIns.generateupx(originCssText); // generate upx version stylesheet
+var newCssText = px2upxIns.generateThree(originCssText, dpr); // generate @1x, @2x and @3x version stylesheet
 ```
 ## License
 

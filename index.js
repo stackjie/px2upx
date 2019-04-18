@@ -1,1 +1,1 @@
-module.exports = require('./lib/px2rpx');
+module.exports = require('./lib/px2upx');
