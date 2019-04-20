@@ -78,7 +78,7 @@ program.args.forEach(function (filePath) {
 
   // generate upx version stylesheet
   if (config.upxVersion) {
-    var newCssText = px2upxIns.generateupx(cssText);
+    var newCssText = px2upxIns.generateUpx(cssText);
     var newFileName = fileName.replace(/(.debug)?.css/, '.debug.css');
     var newFilepath = path.join(outputPath, newFileName);
     saveFile(newFilepath, newCssText);

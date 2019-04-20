@@ -55,7 +55,7 @@ var Px2upx = require('px2upx');
 var px2upxIns = new Px2upx([config]);
 var originCssText = '...';
 var dpr = 2;
-var newCssText = px2upxIns.generateupx(originCssText); // generate upx version stylesheet
+var newCssText = px2upxIns.generateUpx(originCssText); // generate upx version stylesheet
 var newCssText = px2upxIns.generateThree(originCssText, dpr); // generate @1x, @2x and @3x version stylesheet
 ```
 ## License

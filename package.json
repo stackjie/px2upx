@@ -1,7 +1,7 @@
 {
   "name": "px2upx",
   "description": "According to one stylesheet, generate upx version and @1x, @2x and @3x stylesheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/stackjie/px2upx",
   "author": "stackjie <stackjie@gmail.com>",
   "repository": {

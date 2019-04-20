@@ -8,7 +8,7 @@ var px2upxIns = new Px2upx({upxUnit: 1});
 var srcPath = path.join(__dirname, 'test/assets/test.2x.css');
 var srcText = fs.readFileSync(srcPath, {encoding: 'utf8'});
 
-var outputText = px2upxIns.generateupx(srcText);
+var outputText = px2upxIns.generateUpx(srcText);
 
 console.log(outputText)
 

@@ -12,7 +12,7 @@ describe('should work with @2x origin css file', function () {
 
   it('[default] should output right upx file', function () {
     var expectedPath = path.join(__dirname, 'output/default.upx.css');
-    var outputText = px2upxIns.generateupx(srcText);
+    var outputText = px2upxIns.generateUpx(srcText);
     assert.equal(outputText, fs.readFileSync(expectedPath, {encoding: 'utf8'}));
   });
 
@@ -42,7 +42,7 @@ describe('should work with @2x origin css file', function () {
 
 //   it('[default] should output right upx file', function () {
 //     var expectedPath = path.join(__dirname, 'output/default.upx.css');
-//     var outputText = px2upxIns.generateupx(srcText);
+//     var outputText = px2upxIns.generateUpx(srcText);
 //     assert.equal(outputText, fs.readFileSync(expectedPath, {encoding: 'utf8'}));
 //   });
 
